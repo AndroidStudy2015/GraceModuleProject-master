@@ -1,1 +1,1 @@
-include ':app', ':qrcode', ':videoplayer'
+include ':app', ':qrcode', ':videoplayer', ':dialogTest', ':newpermission'

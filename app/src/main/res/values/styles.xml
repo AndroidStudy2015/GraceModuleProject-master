@@ -12,5 +12,14 @@
 
 
 
+    <color name="white">#33000000</color>
+
+    <style name="myProgressStyle" parent="android:Widget.ProgressBar">
+    </style>
+
+
+
+
+
 
 </resources>

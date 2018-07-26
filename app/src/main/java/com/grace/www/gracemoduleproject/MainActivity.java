@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.grace.www.qrcode.app.CaptureActivity;
 import com.grace.www.videoplayer.MyVideoPlayerActivity;
+import com.yingdou.www.anydialog.DialogActivity;
+import com.yingdou.www.newpermission.NewPermissionActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
+
         mBt = findViewById(R.id.bt);
         mBt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,8 +45,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
+        findViewById(R.id.bt_open_dialog).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DialogActivity.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.bt_new_permission).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NewPermissionActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

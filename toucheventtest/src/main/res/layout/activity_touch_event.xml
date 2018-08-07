@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yingdou.www.toucheventtest.customView.RootLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c65435"
+    android:gravity="center"
+    tools:context=".activity.TouchEventActivity">
+
+    <com.yingdou.www.toucheventtest.customView.ParentLinearLayout
+        android:id="@+id/parent"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="#ff9000"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.yingdou.www.toucheventtest.customView.ChildTextView
+            android:id="@+id/textview"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="#fff200"
+            android:orientation="vertical" />
+    </com.yingdou.www.toucheventtest.customView.ParentLinearLayout>
+
+</com.yingdou.www.toucheventtest.customView.RootLinearLayout>

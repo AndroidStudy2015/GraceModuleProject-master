@@ -12,6 +12,9 @@ import com.grace.www.qrcode.app.CaptureActivity;
 import com.grace.www.videoplayer.MyVideoPlayerActivity;
 import com.yingdou.www.anydialog.DialogActivity;
 import com.yingdou.www.newpermission.NewPermissionActivity;
+import com.yingdou.www.toucheventtest.activity.OkShuaXinActivity;
+import com.yingdou.www.toucheventtest.activity.TouchEventActivity;
+import com.yingdou.www.toucheventtest.customviewdemo.TestTouchEventActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,6 +59,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, NewPermissionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.bt_touch_event).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TouchEventActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.bt_test_touch_event).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TestTouchEventActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        findViewById(R.id.bt_ok_shua_xin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, OkShuaXinActivity.class);
                 startActivity(intent);
             }
         });

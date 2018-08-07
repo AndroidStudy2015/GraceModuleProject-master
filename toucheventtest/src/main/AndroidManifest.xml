@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yingdou.www.toucheventtest">
+
+    <application>
+        <activity android:name=".activity.TouchEventActivity" />
+        <activity android:name=".customviewdemo.TestTouchEventActivity" />
+        <activity android:name=".activity.OkShuaXinActivity"></activity>
+    </application>
+
+</manifest>

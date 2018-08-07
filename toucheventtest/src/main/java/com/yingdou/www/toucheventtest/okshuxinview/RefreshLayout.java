@@ -3,6 +3,7 @@ package com.yingdou.www.toucheventtest.okshuxinview;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
@@ -14,7 +15,7 @@ import android.widget.Toast;
 public class RefreshLayout extends LinearLayout {
     private Context mContext;
     private View mHeader;
-    private ViewGroup mBody;
+    private View mBody;
     private int mRootHeight;
     private int mHeaderHeight;
     private int mHeaderPullDownMaxHeight;
@@ -72,8 +73,18 @@ public class RefreshLayout extends LinearLayout {
         int childCount = getChildCount();
         if (childCount > 1) {
             mHeader = getChildAt(0);
-            mBody = (ViewGroup) getChildAt(1);
-            mIHeaderControl = (IHeaderControl) mHeader;
+
+            try {
+                mIHeaderControl = (IHeaderControl) mHeader;
+
+            } catch (ClassCastException e) {
+                throw new RuntimeException("RefreshLayout布局里的第一个子View，必须是一个头布局，" +
+                        "这个头布局必须实现了IHeaderControl接口，头布局可以使用默认提供的ClassicHeader，" +
+                        "也可以仿照ClassicHeader去自定义");
+            }
+
+            mBody = getChildAt(1);
+
 
             mRootHeight = getMeasuredHeight();
             mHeaderHeight = mHeader.getMeasuredHeight();
@@ -81,6 +92,9 @@ public class RefreshLayout extends LinearLayout {
             setBodyHeightIfMachPrent();
             //布局向上移动mHeaderHeight，把header隐藏
             scrollTo(0, mHeaderHeight);
+        } else {
+            throw new RuntimeException("RefreshLayout布局,必须包含两个子View，第一个子View为刷新头布局（必须实现IHeaderControl接口）" +
+                    "第二个子View，一般是可以滑动的RecyclerView或者ScrollView,不能滑动的view也是可以的，但一般不这么做");
         }
 
 
@@ -228,8 +242,14 @@ public class RefreshLayout extends LinearLayout {
 
     private void setBodyHeightIfMachPrent() {
         ViewGroup.LayoutParams lp = mBody.getLayoutParams();
-        lp.height = mRootHeight;
-        mBody.setLayoutParams(lp);
+        Log.e("qwe", lp.height + "  " + lp.width);
+        if (lp.height == ViewGroup.LayoutParams.MATCH_PARENT) {
+            //假如第二个子View高度设置为MATCH_PARENT，那么这里把RefreshLayout的高度mRootHeight赋值给子View
+            //为什么要这么做呢，因为RefreshLayout里有两个View，头布局和可滑动的View，直接给第二个view高度写MATCH_PARENT，
+            // 他等于 RefreshLayout的高度-头布局高度，这样不是我们想要的，所以这里强行设置为RefreshLayout的高度
+            lp.height = mRootHeight;
+            mBody.setLayoutParams(lp);
+        }
 
     }
 

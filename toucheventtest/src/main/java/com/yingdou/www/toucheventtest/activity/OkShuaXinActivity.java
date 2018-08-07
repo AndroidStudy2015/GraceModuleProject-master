@@ -36,7 +36,7 @@ public class OkShuaXinActivity extends AppCompatActivity {
         mRefreshLayout.setOnRefreshListener(new RefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                mRefreshLayout.setRefreshFinish(9000);
+                mRefreshLayout.setRefreshFinish(1000);
             }
         });
     }

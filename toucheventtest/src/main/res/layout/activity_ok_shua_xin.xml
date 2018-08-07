@@ -14,27 +14,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
       />
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:background="#fff"
         android:visibility="visible"
         />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        android:background="#fff">
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:visibility="visible"-->
+        <!--android:background="#fff">-->
 
-        <TextView
-            android:text="vfvfvdfvdvfvfvdfvdvfvfvdfvdvfvfvdfvdvfvfvdfvdvfvfvdfvd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="100sp"/>
+        <!--<TextView-->
+            <!--android:text="vfvfvdfvdvfvfvdfvdvfvfvdfvdvfvfvdfvdvfvfvdfvdvfvfvdfvd"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="100sp"/>-->
 
-    </ScrollView>
+    <!--</ScrollView>-->
 
 
 </com.yingdou.www.toucheventtest.okshuxinview.RefreshLayout>

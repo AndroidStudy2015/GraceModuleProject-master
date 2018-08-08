@@ -1,4 +1,4 @@
-package com.yingdou.www.toucheventtest.okshuxinview;
+package com.yingdou.www.toucheventtest.okokok.refresh;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Scroller;
-import android.widget.Toast;
 
 public class RefreshLayout extends LinearLayout {
     private Context mContext;
@@ -288,7 +287,6 @@ public class RefreshLayout extends LinearLayout {
                 mIHeaderControl.onRefreshFinish();
                 smoothScrollBy(0, mHeaderHeight - getScrollY());
 //                Log.e("refresh", "STATA:" + STATE + "   scrollY:" + getScrollY() + "   mHeaderHeight:" + mHeaderHeight);
-                Toast.makeText(mContext, "刷新成功！", Toast.LENGTH_SHORT).show();
             }
         }, delay);
     }

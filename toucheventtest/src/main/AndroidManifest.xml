@@ -5,7 +5,7 @@
     <application>
         <activity android:name=".activity.TouchEventActivity" />
         <activity android:name=".customviewdemo.TestTouchEventActivity" />
-        <activity android:name=".activity.OkShuaXinActivity"></activity>
+        <activity android:name=".okokok.useDemo.WrapperAdapterActivity"></activity>
     </application>
 
 </manifest>

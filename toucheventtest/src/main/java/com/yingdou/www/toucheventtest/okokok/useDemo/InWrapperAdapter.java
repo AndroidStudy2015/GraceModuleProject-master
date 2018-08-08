@@ -1,4 +1,4 @@
-package com.yingdou.www.toucheventtest.activity;
+package com.yingdou.www.toucheventtest.okokok.useDemo;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,31 +11,42 @@ import com.yingdou.www.toucheventtest.R;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyVH> {
+public class InWrapperAdapter extends RecyclerView.Adapter<InWrapperAdapter.MyVH> {
 
     private List<String> mDataList;
     private Context mContext;
 
-    public MyAdapter(Context context, List<String> dataList) {
+    public InWrapperAdapter(Context context, List<String> dataList) {
         mDataList = dataList;
         mContext = context;
     }
 
+
     @Override
     public MyVH onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View view = inflater.inflate(R.layout.item, parent, false);
+        View view = inflater.inflate(R.layout.item_inwrapper, parent, false);
+
+
         return new MyVH(view);
     }
 
     @Override
     public void onBindViewHolder(MyVH holder, int position) {
         holder.tv.setText(mDataList.get(position));
+
+
     }
 
     @Override
     public int getItemCount() {
         return mDataList.size();
+    }
+
+    boolean mHasNoMore = false;
+
+    public void setNoMore(boolean hasNoMore) {
+        mHasNoMore = hasNoMore;
     }
 
     class MyVH extends RecyclerView.ViewHolder {

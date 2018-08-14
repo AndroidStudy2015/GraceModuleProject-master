@@ -8,13 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.yingdou.www.toucheventtest.R;
-import com.yingdou.www.toucheventtest.okokok.refresh.RefreshLayout;
 
-public class ClassicHeader extends LinearLayout implements RefreshLayout.IHeaderControl {
+public class ClassicHeader extends BaseHeader{
 
     private TextView tv;
     private ImageView iv;

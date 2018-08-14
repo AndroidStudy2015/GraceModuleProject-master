@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fast.www.notificationdemo">
+<uses-permission android:name="android.permission.VIBRATE"/>
+    <application>
+        <activity
+            android:name=".NotificationDemo"
+            android:label="@string/title_activity_notification_demo"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>

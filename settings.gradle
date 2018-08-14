@@ -1,1 +1,1 @@
-include ':app', ':qrcode', ':videoplayer', ':dialogTest', ':newpermission', ':toucheventtest'
+include ':app', ':qrcode', ':videoplayer', ':dialogTest', ':newpermission', ':toucheventtest', ':rxjavademo', ':notificationdemo'

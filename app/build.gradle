@@ -31,4 +31,6 @@ dependencies {
     implementation project(':dialogTest')
     implementation project(':newpermission')
     implementation project(':toucheventtest')
+    implementation project(':rxjavademo')
+    implementation project(':notificationdemo')
 }

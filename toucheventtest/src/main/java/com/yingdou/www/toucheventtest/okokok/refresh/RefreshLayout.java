@@ -78,7 +78,7 @@ public class RefreshLayout extends LinearLayout {
 
             } catch (ClassCastException e) {
                 throw new RuntimeException("RefreshLayout布局里的第一个子View，必须是一个头布局，" +
-                        "这个头布局必须实现了IHeaderControl接口，头布局可以使用默认提供的ClassicHeader，" +
+                        "这个头布局必须继承自BaseHeader，头布局可以使用默认提供的ClassicHeader，" +
                         "也可以仿照ClassicHeader去自定义");
             }
 
@@ -92,7 +92,7 @@ public class RefreshLayout extends LinearLayout {
             //布局向上移动mHeaderHeight，把header隐藏
             scrollTo(0, mHeaderHeight);
         } else {
-            throw new RuntimeException("RefreshLayout布局,必须包含两个子View，第一个子View为刷新头布局（必须实现IHeaderControl接口）" +
+            throw new RuntimeException("RefreshLayout布局,必须包含两个子View，第一个子View为刷新头布局（必须继承自BaseHeader）" +
                     "第二个子View，一般是可以滑动的RecyclerView或者ScrollView,不能滑动的view也是可以的，但一般不这么做");
         }
 
@@ -293,7 +293,8 @@ public class RefreshLayout extends LinearLayout {
 
 
     /**
-     * 如果要自定义一个header，这个header必须实现IHeaderControl接口
+     * 如果要自定义一个header，这个header必须实现IHeaderControl接口,由于写了BaseHeader，BaseHeader实现了IHeaderControl接口
+     * 所以如果要自定义header的话，只需要继承BaseHeader就行了
      */
     public interface IHeaderControl {
 

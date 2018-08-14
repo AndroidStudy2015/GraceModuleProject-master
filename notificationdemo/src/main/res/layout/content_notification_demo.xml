@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/bt_common_notification"
+            android:layout_width="wrap_content"
+            android:text="普通通知，点击可跳转"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/bt_cancle_common_notification"
+            android:layout_width="wrap_content"
+            android:text="取消通知"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/bt_progress_notification"
+        android:layout_width="wrap_content"
+        android:text="含进度条通知"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bt_float_notification"
+        android:layout_width="wrap_content"
+        android:text="bt3"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

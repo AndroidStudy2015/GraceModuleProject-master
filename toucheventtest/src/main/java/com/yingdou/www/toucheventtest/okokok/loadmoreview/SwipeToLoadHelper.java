@@ -20,7 +20,7 @@ public class SwipeToLoadHelper extends RecyclerView.OnScrollListener {
         isLodingMore = lodingMore;
     }
 
-    boolean isLodingMore = false;
+    boolean isLodingMore = false;//一个标志，正在加载更多时，为true，防止多次触发加载更多操作
 
     public SwipeToLoadHelper(RecyclerView recyclerView, BaseFooter loadMoreView) {
 
@@ -56,7 +56,7 @@ public class SwipeToLoadHelper extends RecyclerView.OnScrollListener {
 
             int lastVisibleItemPosition = linearLayoutManager.findLastVisibleItemPosition();
             int firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
-            if (firstVisibleItemPosition == 0) {
+            if (firstVisibleItemPosition == 0) {//如果第一个显示的条目为0，那么脚布局为没有更多
                 mLoadMoreView.onLoadNoMore();
             } else if (!isLodingMore && newState == SCROLL_STATE_IDLE && lastVisibleItemPosition == mLayoutManager.getItemCount() - 1) {
 
@@ -97,7 +97,7 @@ public class SwipeToLoadHelper extends RecyclerView.OnScrollListener {
 
     LoadMoreHelperListener mLoadMoreHelperListener;
 
-    public interface LoadMoreHelperListener {
+    public interface LoadMoreHelperListener {//交给WrapperAdapter去设置监听上拉刷新
         void onLoadHelper();
     }
 

@@ -53,7 +53,7 @@ public class ClassicFooter extends BaseFooter {
 
     @Override
     public void onLoadingMore() {
-        tv.setText("正在加载...");
+                tv.setText("正在加载...");
         float rotation = iv.getRotation();
         animator = ObjectAnimator.ofFloat(iv, "rotation", rotation, rotation + 180f * 10);
 

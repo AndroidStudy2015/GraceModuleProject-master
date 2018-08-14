@@ -45,9 +45,6 @@ public class InWrapperAdapter extends RecyclerView.Adapter<InWrapperAdapter.MyVH
 
     boolean mHasNoMore = false;
 
-    public void setNoMore(boolean hasNoMore) {
-        mHasNoMore = hasNoMore;
-    }
 
     class MyVH extends RecyclerView.ViewHolder {
 

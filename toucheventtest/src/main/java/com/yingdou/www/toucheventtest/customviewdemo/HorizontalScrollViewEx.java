@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Scroller;
 
+/**
+ * Android开发艺术探索 示例
+ */
 public class HorizontalScrollViewEx extends ViewGroup {
     private static final String TAG = "HorizontalScrollViewEx";
  

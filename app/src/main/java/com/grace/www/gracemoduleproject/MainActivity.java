@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.fast.www.notificationdemo.NotificationDemo;
 import com.grace.www.qrcode.app.CaptureActivity;
 import com.grace.www.videoplayer.MyVideoPlayerActivity;
 import com.yingdou.www.anydialog.DialogActivity;
 import com.yingdou.www.newpermission.NewPermissionActivity;
+import com.yingdou.www.rxjavademo.RxjavaActivity;
 import com.yingdou.www.toucheventtest.activity.TouchEventActivity;
 import com.yingdou.www.toucheventtest.okokok.useDemo.WrapperAdapterActivity;
 import com.yingdou.www.toucheventtest.customviewdemo.TestTouchEventActivity;
@@ -85,6 +87,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, WrapperAdapterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        findViewById(R.id.bt_rxjava).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RxjavaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.bt_notification).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NotificationDemo.class);
                 startActivity(intent);
             }
         });

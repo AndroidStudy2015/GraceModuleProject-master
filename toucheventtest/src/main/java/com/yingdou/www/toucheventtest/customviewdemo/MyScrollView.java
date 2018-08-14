@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.ScrollView;
-
+//与MyLinearLayoutOut一起使用解决滑动冲突
 public class MyScrollView extends ScrollView {
     public MyScrollView(Context context) {
         super(context);
